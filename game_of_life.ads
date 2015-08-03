@@ -5,6 +5,8 @@ package Game_Of_Life is
     type Height_Index is mod Board_Height;
     type Width_Index  is mod Board_Width;
 
+    subtype Percent      is Integer      range 0..100;
+
     subtype Height_Range is Height_Index range 0..33;
     subtype Width_Range  is Width_Index  range 0..119;
 
@@ -13,7 +15,8 @@ package Game_Of_Life is
 
     function New_Board return Board;
 
-    procedure Init_Board    (Board_Crt  :    out Board);
+    procedure Init_Board    (Board_Crt  :    out Board;
+                             Fill       : in     Percent);
     procedure Loop_To_Print (Board_Crt  : in out Board;
                              Delay_Time : in     Duration);
 end Game_Of_Life;

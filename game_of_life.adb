@@ -15,22 +15,20 @@ package body Game_Of_Life is
         return Board_New;
     end New_Board;
 
-    procedure Init_Board (Board_Crt : out Board) is
-        subtype Rand_Range is Integer range 0..1;
+    procedure Init_Board (Board_Crt : out Board; Fill : in Percent) is
+        package Random_Percent is new Ada.Numerics.Discrete_Random (Percent);
 
-        package Random_Bool is new Ada.Numerics.Discrete_Random (Rand_Range);
-
-        Generator      : Random_Bool.Generator;
+        Generator      : Random_Percent.Generator;
         Random_Integer : Integer;
         Random_Boolean : Boolean;
     begin
-        Random_Bool.Reset (Generator);
+        Random_Percent.Reset (Generator);
 
         for i in Height_Range loop
             for j in Width_Range loop
-                Random_Integer := Random_Bool.Random (Generator);
+                Random_Integer := Random_Percent.Random (Generator);
 
-                if Random_Integer = 1 then
+                if Random_Integer < Fill then
                     Random_Boolean := True;
                 else
                     Random_Boolean := False;
