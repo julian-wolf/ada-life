@@ -123,9 +123,8 @@ package body Game_Of_Life is
 
     Message : Unbounded_String;
 
-    subtype Iter is Integer range 0..1024;
     begin
-        for i in Iter loop
+        for i in Positive loop
             Message := To_Unbounded_String ("Iteration: " &
                                             Integer'Image(i));
             Print_Board  (Board_Crt, To_String(Message));
