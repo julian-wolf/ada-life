@@ -7,8 +7,8 @@ package Game_Of_Life is
 
     subtype Percent      is Integer      range 0..100;
 
-    subtype Height_Range is Height_Index range 0..33;
-    subtype Width_Range  is Width_Index  range 0..119;
+    subtype Height_Range is Height_Index range 0..Height_Index'Last;
+    subtype Width_Range  is Width_Index  range 0..Width_Index'Last;
 
     type Board is array (Height_Index, Width_Index)
                   of Boolean;

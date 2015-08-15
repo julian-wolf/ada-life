@@ -7,7 +7,6 @@ use Ada.Text_Io;
 use Game_Of_Life;
 
 procedure Play is
-
 	Fill_Percent : Percent  := 40;
 	Delay_Time   : Duration := 0.05;
 	Board_Main   : Board;
