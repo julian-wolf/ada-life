@@ -1,10 +1,6 @@
-with Ada.Command_Line;
-with Ada.Text_Io;
-with Game_Of_Life;
-
-use Ada.Command_Line;
-use Ada.Text_Io;
-use Game_Of_Life;
+with Ada.Command_Line;  use Ada.Command_Line;
+with Ada.Text_Io;       use Ada.Text_Io;
+with Game_Of_Life;      use Game_Of_Life;
 
 procedure Play is
     Fill_Percent : Percent  := 40;

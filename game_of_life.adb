@@ -119,10 +119,9 @@ package body Game_Of_Life is
 
     procedure Loop_To_Print (Board_Crt  : in out Board;
                              Delay_TIme : in     Duration) is
-    use Ada.Strings.Unbounded;
+        use Ada.Strings.Unbounded;
 
-    Message : Unbounded_String;
-
+        Message : Unbounded_String;
     begin
         for i in Positive loop
             Message := To_Unbounded_String ("Iteration: " &
